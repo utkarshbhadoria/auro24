@@ -1,1 +1,31 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* Ensure AG Grid Quartz Theme Styling */
+.ag-theme-quartz {
+    font-family: "Poppins", sans-serif; /* Change font */
+    border: 1px solid #d1d5db !important; /* Ensure the border is visible */
+    border-radius: 12px; /* Curve the outer edges */
+    overflow: hidden; /* Prevent content from overflowing the rounded corners */
+  }
+  
+  /* Ensure the AG Grid wrapper respects border-radius */
+  .ag-theme-quartz .ag-root-wrapper {
+    border-radius: 12px;
+    border: none; /* Remove internal borders */
+  }
+  
+  /* Style the header to match curved corners */
+  .ag-theme-quartz .ag-header {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+  }
+  
+  /* Ensure the last row does not have sharp edges */
+  .ag-theme-quartz .ag-body-viewport {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  
