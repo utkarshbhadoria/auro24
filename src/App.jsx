@@ -12,10 +12,14 @@ import WifiNetwork from './components/WifiNetwork';
 import Compilance from './components/Compilance';
 import Reports from './components/Reports';
 import Logs from './components/Logs';
+import DeviceProfile from './components/DeviceProfile'
+import DeviceGroups from './components/DeviceGroups'
+import Assigned from './components/Assigned'
+import Unassigned from './components/Unassigned'
 
 
 function App() {
-  
+  //comment
   return (
     <>
       <Routes>
@@ -28,6 +32,11 @@ function App() {
         <Route path='/compilance' element={<Compilance/>}/>
         <Route path='/reports' element={<Reports/>}/>
         <Route path='/logs' element={<Logs/>}/>
+
+        <Route path="/deviceProfile" element={<DeviceProfile />} />
+        <Route path='/deviceGroups' element={<DeviceGroups/>}/>
+        <Route path='/deviceAssigned' element={<Assigned/>}/>
+        <Route path='/deviceUnassigned' element={<Unassigned/>}/>
         
       </Routes>
     </>
