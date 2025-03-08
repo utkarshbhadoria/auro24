@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Dashboard/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/userManagement' element={<Usermanagement/>}/>
         <Route path='/appManagement' element={<AppManagement/>}/>

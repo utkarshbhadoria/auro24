@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 
 function Home() {
   return (
-    <div>ARSHIK home page</div>
+    <div>Home</div>
   )
 }
 
