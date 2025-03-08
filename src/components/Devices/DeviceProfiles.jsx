@@ -1,11 +1,9 @@
-
-import Sidebar from './Sidebar';
 import React, { useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { ModuleRegistry } from "ag-grid-community";
 import { ClientSideRowModelModule } from "ag-grid-community";
 import { ValidationModule } from "ag-grid-community"; 
-import PageLayout from "./pages/pageLayout"; // Import the layout
+import PageLayout from "../pages/pageLayout"; // Import the layout
 
 // Register required modules
 ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule]);
@@ -13,7 +11,7 @@ ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule]);
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css"; 
 
-const Dashboard = () => {
+const DeviceProfiles = () => {
   const [rowData] = useState([
     {
       profileName: "iPhones 2024",
@@ -104,11 +102,7 @@ const Dashboard = () => {
     { field: "profileType", headerName: "Profile Type", sortable: true, filter: true },
   ]);
 
-
   return (
-    <div className='flex flex-row'>
-        <Sidebar/>
-        
     <PageLayout title="DEVICES" subtitle="Device Profiles" description= "Lorem ipsum odor amet, consectetuer adipiscing elit.">
       <div className="ag-theme-quartz" style={{ height: "100%", width: "100%" }}>
         <AgGridReact 
@@ -121,9 +115,7 @@ const Dashboard = () => {
         />
       </div>
     </PageLayout>
-    </div>
   );
-}
+};
 
-
-export default Dashboard;
+export default DeviceProfiles;
