@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@tailwindcss/vite": "^4.0.8",
+    "ag-grid-community": "^33.1.1",
+    "ag-grid-react": "^33.1.1",
     "lucide-react": "^0.476.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -1,129 +1,139 @@
-
 import Sidebar from './Sidebar';
 import React, { useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { ModuleRegistry } from "ag-grid-community";
 import { ClientSideRowModelModule } from "ag-grid-community";
 import { ValidationModule } from "ag-grid-community"; 
-import PageLayout from "./pages/pageLayout"; // Import the layout
+import PageLayout from "./pages/pageLayout";
 
 // Register required modules
 ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule]);
 
 import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-quartz.css"; 
+import "ag-grid-community/styles/ag-theme-quartz.css";
 
 const Dashboard = () => {
   const [rowData] = useState([
     {
       profileName: "iPhones 2024",
       description:
-        "This device profile is designed for iPhones used in 2024 under a Bring Your Own Device (BYOD) policy, implementing enhanced security measures.",
+        "This device profile is designed for iPhones used in 2024 under a Bring Your Own Device (BYOD) policy. It enforces strict security protocols, remote wiping, and data encryption for enhanced protection.",
       deviceType: "iPhone",
       deviceGroup: "Device Groups",
       profileType: "BYOD",
     },
     {
       profileName: "MacBooks 2024",
-      description: "Designed for MacBook Pro/Air devices used in 2024, ensuring security and compliance.",
+      description:
+        "This profile is designed for MacBook Pro and MacBook Air devices. It ensures that all company-owned MacBooks comply with data protection policies, software patching, and remote management.",
       deviceType: "MacBook",
       deviceGroup: "Engineering",
       profileType: "Corporate",
     },
     {
-      profileName: "Android Phones 2024",
-      description: "Profile tailored for Android devices used under the company’s Mobile Device Management (MDM) policy.",
-      deviceType: "Android Phone",
-      deviceGroup: "Sales",
-      profileType: "BYOD",
-    },
-    {
       profileName: "Windows Laptops 2024",
-      description: "Secured and optimized profile for company-issued Windows laptops.",
+      description:
+        "This device profile applies to company-issued Windows laptops. It enables BitLocker encryption, remote desktop management, and multi-factor authentication to prevent unauthorized data breaches.",
       deviceType: "Windows Laptop",
       deviceGroup: "IT Department",
       profileType: "Corporate",
     },
     {
+      profileName: "Android Phones 2024",
+      description:
+        "This profile is designed for Android devices being used under the company's BYOD policy. It enforces application whitelisting, mobile device management (MDM), and remote device locking.",
+      deviceType: "Android Phone",
+      deviceGroup: "Sales",
+      profileType: "BYOD",
+    },
+    {
       profileName: "Tablets - Healthcare",
-      description: "Profile for tablets used in healthcare to ensure data privacy and compliance.",
+      description:
+        "This profile is dedicated to healthcare facilities where tablets are used by medical staff. It restricts access to social media, third-party apps, and implements strong device encryption.",
       deviceType: "Tablet",
       deviceGroup: "Healthcare",
       profileType: "Secure Access",
     },
     {
-      profileName: "Wearables - R&D",
-      description: "Security policies for wearable devices used in research & development.",
-      deviceType: "Smartwatch",
-      deviceGroup: "R&D",
-      profileType: "Experimental",
+      profileName: "POS Machines - Retail",
+      description:
+        "This profile is designed for Point-of-Sale (POS) devices in retail stores. It ensures that the POS devices remain secure, isolated from external networks, and run only authorized software.",
+      deviceType: "POS Machine",
+      deviceGroup: "Retail",
+      profileType: "Limited Access",
     },
     {
-      profileName: "Gaming Consoles 2024",
-      description: "Restricted access policy for gaming consoles in testing environments.",
-      deviceType: "Gaming Console",
-      deviceGroup: "QA",
-      profileType: "Restricted",
-    },
-    {
-      profileName: "IoT Devices 2024",
-      description: "Profile to manage IoT-based devices ensuring secure network access. Restricted access policy for gaming consoles in testing environments. Restricted access policy for gaming consoles in testing environments.",
+      profileName: "IoT Devices - Smart Office",
+      description:
+        "This profile handles IoT devices installed in smart offices such as smart lights, sensors, and air conditioning systems. It ensures restricted network access and device health monitoring.",
       deviceType: "IoT Device",
       deviceGroup: "Smart Office",
       profileType: "Network Restricted",
     },
     {
-      profileName: "Printers - Office",
-      description: "Security configuration for office printers to prevent unauthorized access.",
+      profileName: "Office Printers - Secure Access",
+      description:
+        "This profile secures all office printers by enforcing user authentication, print log tracking, and data encryption during document printing. It also blocks unauthorized remote print requests.",
       deviceType: "Printer",
       deviceGroup: "Admin",
       profileType: "Secure Print",
     },
     {
-      profileName: "Smart TVs - Meeting Rooms",
-      description: "Pre-configured settings for smart TVs used in meeting rooms.",
+      profileName: "Smart TVs - Conference Rooms",
+      description:
+        "This profile is created for Smart TVs used in conference rooms for official presentations. It locks down operating systems, prevents app installations, and restricts internet browsing.",
       deviceType: "Smart TV",
       deviceGroup: "Operations",
       profileType: "Media Restricted",
     },
     {
-      profileName: "Linux Workstations",
-      description: "Optimized profile for Linux-based workstations used in engineering.",
-      deviceType: "Linux PC",
-      deviceGroup: "Development",
-      profileType: "Developer Access",
-    },
+      profileName: "Vehicle Tracking Devices",
+      description:
+        "This profile applies to GPS vehicle tracking devices used in company vehicles. It logs vehicle movement, route history, and prevents unauthorized changes in device configurations.",
+      deviceType: "GPS Tracker",
+      deviceGroup: "Fleet Management",
+      profileType: "Location Tracking",
+    }
   ]);
-
+  
 
   const [columnDefs] = useState([
     { field: "profileName", headerName: "Profile Name", sortable: true, filter: true },
-    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2 , autoHeight: true},
+    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true },
     { field: "deviceType", headerName: "Device Type", sortable: true, filter: true },
     { field: "deviceGroup", headerName: "Device Group", sortable: true, filter: true },
     { field: "profileType", headerName: "Profile Type", sortable: true, filter: true },
   ]);
 
-
   return (
-    <div className='flex flex-row'>
-        <Sidebar/>
-        
-    <PageLayout title="DEVICES" subtitle="Device Profiles" description= "Lorem ipsum odor amet, consectetuer adipiscing elit.">
-      <div className="ag-theme-quartz" style={{ height: "100%", width: "100%" }}>
-        <AgGridReact 
-            rowData={rowData}
-            columnDefs={columnDefs}
-            defaultColDef={{ cellStyle: { textAlign: "left", whiteSpace: "normal" } }} /* Ensure all columns support multi-line */
-            rowHeight={80} /* Adjust as needed */
-            domLayout="autoHeight" /* Allow automatic height adjustment */
-            pagination={true}
-        />
+    <PageLayout 
+      title="DEVICES" 
+      subtitle="Device Profiles" 
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+      
+      {/* ✅ Table Now Expands Full Page */}
+      <div className="ag-theme-quartz w-full h-full">
+      <AgGridReact 
+          rowData={rowData}
+          columnDefs={columnDefs}
+          defaultColDef={{
+            cellStyle: { textAlign: "left", whiteSpace: "normal" }
+          }}
+          autoHeight={true} /* ✅ Automatically expand rows */
+          pagination={true}
+          paginationPageSize={10} /* Optional: Set pagination */
+          onGridReady={(params) => params.api.sizeColumnsToFit()} /* Ensure columns fit */
+          suppressRowVirtualization={true} /* ✅ Prevent row collapse */
+          getRowHeight={(params) => {
+            if (params.node.data && params.node.data.description) {
+              return 90; // Automatically set height based on text
+            }
+            return 55;
+          }}
+      />
       </div>
     </PageLayout>
-    </div>
   );
 }
-
 
 export default Dashboard;
