@@ -3,11 +3,11 @@ import Sidebar from './Sidebar';
 
 function DeviceGroups() {
   return (
-    <div className='flex flex-row'>
-        <Sidebar/>
-        <div>DeviceGroups</div>
+  <div className='flex flex-row'>
+    <Sidebar/>
+    <div>DeviceGroups</div>
 
-    </div>
+</div>
   )
 }
 

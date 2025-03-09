@@ -1,14 +1,14 @@
 import React from 'react'
 import Sidebar from './Sidebar';
 
-function DeviceProfile() {
+function DeviceProfiles() {
   return (
     <div className='flex flex-row'>
         <Sidebar/>
-        <div>DeviceProfile</div>
+        <div>DeviceProiles</div>
 
     </div>
   )
 }
 
-export default DeviceProfile
+export default DeviceProfiles
