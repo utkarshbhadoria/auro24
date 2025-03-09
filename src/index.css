@@ -49,4 +49,17 @@
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
   }
+
+  .custom-underline {
+    position: relative;
+  }
+  .custom-underline::after {
+    content: '';
+    position: absolute;
+    width: 70%; /* Adjust the width as needed */
+    height: 2px; /* Adjust the thickness as needed */
+    background-color: #3C4A5B; /* Use the desired color */
+    left: 15%; /* Centers the underline */
+    bottom: 0px; /* Adjust the position relative to the text */
+  }
   

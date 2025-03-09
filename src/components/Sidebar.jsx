@@ -12,14 +12,14 @@ function Sidebar() {
   //console.log(pathname);
 
   return (
-    <div className='h-screen h-full flex flex-col shadow-sm justify-between rounded-3xl m-2 bg-gray-900 overflow-y-auto'>
+    <div className='h-screen w-75 h-full flex flex-col shadow-sm rounded-3xl m-2 bg-gray-900 overflow-y-auto'>
         {/* Branding */}
-        <div className="p-4 pb-2 flex justify-between items-center">
+        <div className="p-4 pb-2 h-20 flex justify-between items-center custom-underline w-full">
             <img src="src\assets\brand.png" className={`overflow-hidden transition-all ${expanded? 'w-32' :'w-0' }`} alt=""/>
             <button className='p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100' onClick={() => setExpanded((curr) => !curr)}>{expanded? <ChevronFirst/> :<ChevronLast/>}</button>
         </div>
-
-       
+        {/* remaining list & footer */}
+       <div className='flex flex-col flex-grow justify-between pt-5'>
         {/* list */}
         <ul className='text-white space-y-2'>
 
@@ -110,6 +110,7 @@ function Sidebar() {
           <span className='overflow-hidden font-semibold'>Account</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-last"><path d="m7 18 6-6-6-6"/><path d="M17 6v12"/></svg>       
        </div>
+        </div>
         </div>
 
     </div>
