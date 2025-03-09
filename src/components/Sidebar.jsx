@@ -12,10 +12,10 @@ function Sidebar() {
   //console.log(pathname);
 
   return (
-    <div className='h-screen w-75 h-full flex flex-col shadow-sm rounded-3xl m-2 bg-gray-900 overflow-y-auto'>
+    <div className='h-screen h-full flex flex-col shadow-sm rounded-3xl m-2 bg-gray-900 overflow-y-auto'>
         {/* Branding */}
         <div className="p-4 pb-2 h-20 flex justify-between items-center custom-underline w-full">
-            <img src="src\assets\brand.png" className={`overflow-hidden transition-all ${expanded? 'w-32' :'w-0' }`} alt=""/>
+            <img src="src\assets\brand.png" className={`overflow-hidden transition-all ${expanded? 'w-35' :'w-0' }`} alt=""/>
             <button className='p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100' onClick={() => setExpanded((curr) => !curr)}>{expanded? <ChevronFirst/> :<ChevronLast/>}</button>
         </div>
         {/* remaining list & footer */}
@@ -45,10 +45,10 @@ function Sidebar() {
                       <NavLink to='#' className={`flex flex-row pl-4 pt-2 pb-2 pr-2 ${pathname.includes("/deviceProfile")||pathname.includes("/deviceGroups")||pathname.includes("/deviceAssigned")||pathname.includes("/deviceUnassigned") ? 'bg-blue-500 rounded-xl' : ''}`} onClick={(e)=>{ handleClick();}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-smartphone"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>                        
                         <span className={`overflow-hidden ${expanded? 'w-full pl-2' :'w-0'}`}>Devices</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`lucide lucide-chevron-down ${open && 'rotate-180'}`}><path d="m6 9 6 6 6-6"/></svg>                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`lucide lucide-chevron-down ${open && 'rotate-180'} ${!expanded && 'hidden'}`}><path d="m6 9 6 6 6-6"/></svg>                      
                         </NavLink>
                       <ul className={`${!(open && expanded) ? 'hidden' : ''} pt-5 p-3`}>
-                        <li className={`p-1 pl-3 mr-2 ${pathname.includes("/deviceProfile") ? 'bg-blue-500 rounded-xl' : ''}`}><NavLink to='/deviceProfile'>Device Profiles</NavLink></li>
+                        <li className={`p-1 pl-3 mr-2 ${pathname.includes("/deviceProfile") ? 'bg-blue-500 rounded-xl' : ''}`}><NavLink to='/deviceProfiles'>Device Profiles</NavLink></li>
                         <li className={`p-1 pl-3 mr-2 ${pathname.includes("/deviceGroups") ? 'bg-blue-500 rounded-xl' : ''}`}><NavLink to='/deviceGroups'>Device Groups</NavLink></li>
                         <li className='p-1 pl-3 mt-2 border-t-1 border-gray-500 text-gray-500 font-medium'>DEVICE MANAGEMENT</li>
                         <li className={`p-1 pl-3 mr-2 ${pathname.includes("/deviceAssigned") ? 'bg-blue-500 rounded-xl' : ''}`}><NavLink to='/deviceAssigned'>Assigned</NavLink></li>

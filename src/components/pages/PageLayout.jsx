@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "../Sidebar";
 import { Plus } from "lucide-react";
-import { Dialog } from "@headlessui/react";
 
 const PageLayout = ({ children, title, subtitle, description }) => {
 
@@ -17,15 +16,20 @@ const PageLayout = ({ children, title, subtitle, description }) => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <Sidebar className="self-start" />
+      <Sidebar/>
 
       {/* Parent Container - Full Page Height */}
-      <div className="w-full flex flex-col flex-1 gap-4 p-6">
+      <div className="flex flex-col flex-grow gap-4 p-6">
         
         {/* Title Section */}
-        <div className="bg-gray-100 w-[80%] mx-auto">
-          <h4 className="text-lg font-bold mb-2 text-cyan-700 text-left">{title}</h4>
-          {subtitle && <h2 className="text-xl font-bold mb-2 text-left">{subtitle}</h2>}
+        <div className="bg-gray-100 w-full mx-auto">
+          <div className="flex flex-row relative">
+            <h4 className="pr-2 text-lg font-bold mb-2 text-cyan-700 text-left">{title}</h4>
+            <span className="relative"><span className="text-3xl font-bold absolute bottom-[35%]">{"."}</span></span>
+            <h4 className="pl-4 text-lg font-bold mb-2 text-stone-700 text-left">{subtitle.toUpperCase()}</h4>
+          </div>
+
+          {subtitle && <h2 className="pt-5 text-4xl font-bold mb-2 text-left">{subtitle}</h2>}
 
           {/* Description & Buttons */}
           <div className="flex justify-between items-center mt-2">
@@ -51,7 +55,7 @@ const PageLayout = ({ children, title, subtitle, description }) => {
         </div>
 
         {/* ✅ Full-Page Table Section */}
-        <div className="bg-white w-[80%] p-4 rounded-lg shadow-md flex-1 mx-auto overflow-y-auto">
+        <div className="bg-white w-full p-4 rounded-2xl shadow-md flex-1 mx-auto overflow-y-auto">
           {children}
         </div>
       </div>

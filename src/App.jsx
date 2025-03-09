@@ -14,8 +14,8 @@ import Reports from './components/Reports';
 import Logs from './components/Logs';
 import DeviceProfiles from './components/Devices/DeviceProfiles'
 import DeviceGroups from './components/Devices/DeviceGroups'
-import Assigned from './components/Assigned'
-import Unassigned from './components/Unassigned'
+import Assigned from './components/Devices/Assigned'
+import Unassigned from './components/Devices/Unassigned'
 
 
 function App() {

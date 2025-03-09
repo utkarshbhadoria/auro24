@@ -12,7 +12,7 @@ ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule]);
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 
-const DeviceProfiles = () => {
+const Assigned = () => {
   const [rowData, setRoData] = useState();
   const [columnDefs] = useState([
     { field: "profileName", headerName: "Profile Name", sortable: true, filter: true },
@@ -39,7 +39,7 @@ const DeviceProfiles = () => {
   return (
     <PageLayout 
       title="DEVICES" 
-      subtitle="Device Profiles" 
+      subtitle="Assigned Devices" 
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
       
       {/* ✅ Table Now Expands Full Page */}
@@ -67,4 +67,4 @@ const DeviceProfiles = () => {
   );
 }
 
-export default DeviceProfiles;
+export default Assigned;
