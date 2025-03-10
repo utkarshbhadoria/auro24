@@ -11,16 +11,26 @@ ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule]);
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
+import { WrapText } from "lucide-react";
 
 const DeviceGroups = () => {
   const [rowData, setRoData] = useState();
   const [columnDefs] = useState([
     { field: "profileName", headerName: "Profile Name", sortable: true, filter: true },
-    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true },
+    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true, wrapText:true },
     { field: "deviceType", headerName: "Device Type", sortable: true, filter: true },
     { field: "deviceGroup", headerName: "Device Group", sortable: true, filter: true },
     { field: "profileType", headerName: "Profile Type", sortable: true, filter: true },
   ]);
+
+  const defaultColDef = {
+    flex: 1,
+    minWidth: 100,
+    resizable: true,
+    wrapText: true, // Enable text wrapping for all columns by default
+    autoHeight: true, // Adjust row height based on content for all columns by default
+    textAlign: "left"
+  };
 
   async function fetchData() {
     try {
@@ -42,14 +52,11 @@ const DeviceGroups = () => {
       subtitle="Device Groups" 
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
       
-      {/* ✅ Table Now Expands Full Page */}
       <div className="ag-theme-quartz">
       <AgGridReact 
           rowData={rowData}
           columnDefs={columnDefs}
-          defaultColDef={{
-            cellStyle: { textAlign: "left", whiteSpace: "normal" }
-          }}
+          defaultColDef={defaultColDef}
           autoHeight={true} /* ✅ Automatically expand rows */
           pagination={true}
           paginationPageSize={10} /* Optional: Set pagination */

@@ -16,7 +16,7 @@ const Assigned = () => {
   const [rowData, setRoData] = useState();
   const [columnDefs] = useState([
     { field: "profileName", headerName: "Profile Name", sortable: true, filter: true },
-    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true },
+    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true , wrapText:true },
     { field: "deviceType", headerName: "Device Type", sortable: true, filter: true },
     { field: "deviceGroup", headerName: "Device Group", sortable: true, filter: true },
     { field: "profileType", headerName: "Profile Type", sortable: true, filter: true },
