@@ -16,11 +16,10 @@ import { WrapText } from "lucide-react";
 const DeviceGroups = () => {
   const [rowData, setRoData] = useState();
   const [columnDefs] = useState([
-    { field: "profileName", headerName: "Profile Name", sortable: true, filter: true },
+    { field: "deviceGroupName", headerName: "Profile Name", sortable: true, filter: true },
     { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true, wrapText:true },
-    { field: "deviceType", headerName: "Device Type", sortable: true, filter: true },
-    { field: "deviceGroup", headerName: "Device Group", sortable: true, filter: true },
-    { field: "profileType", headerName: "Profile Type", sortable: true, filter: true },
+    { field: "numberOfDevices", headerName: "Device Type", sortable: true, filter: true },
+    { field: "lastModified", headerName: "Device Group", sortable: true, filter: true }
   ]);
 
   const defaultColDef = {
@@ -34,7 +33,7 @@ const DeviceGroups = () => {
 
   async function fetchData() {
     try {
-      const response = await fetch('src/dummyDatas/deviceProfile.json');  
+      const response = await fetch('src/dummyDatas/devicegroup.json');  
       const data = await response.json();  
       setRoData(data); 
     } catch (error) {
