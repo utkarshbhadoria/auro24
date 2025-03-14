@@ -1,0 +1,45 @@
+[
+    {
+      "deviceGroupName": "Sales Team Devices",
+      "description": "Devices used by the sales team",
+      "numberOfDevices": 50,
+      "lastModified": "2023-03-15"
+    },
+    {
+      "deviceGroupName": "IT Department Devices",
+      "description": "Devices for IT staff",
+      "numberOfDevices": 30,
+      "lastModified": "2023-04-10"
+    },
+    {
+      "deviceGroupName": "Remote Workers",
+      "description": "Devices for remote employees",
+      "numberOfDevices": 20,
+      "lastModified": "2023-02-05"
+    },
+    {
+      "deviceGroupName": "Executive Devices",
+      "description": "Devices assigned to executives",
+      "numberOfDevices": 10,
+      "lastModified": "2023-01-20"
+    },
+    {
+      "deviceGroupName": "Test Devices",
+      "description": "Devices assigned to executives",
+      "numberOfDevices": 15,
+      "lastModified": "2023-03-01"
+    },
+    {
+      "deviceGroupName": "Custom Group 1",
+      "description": "Custom grouping for specific needs",
+      "numberOfDevices": 5,
+      "lastModified": "2023-04-12"
+    },
+    {
+      "deviceGroupName": "Custom Group 2",
+      "description": "Another custom grouping",
+      "numberOfDevices": 5,
+      "lastModified": "2023-03-25"
+    }
+  ]
+  

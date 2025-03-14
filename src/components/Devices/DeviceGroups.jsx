@@ -3,11 +3,12 @@ import { AgGridReact } from "ag-grid-react";
 import { ModuleRegistry } from "ag-grid-community";
 import { ClientSideRowModelModule } from "ag-grid-community";
 import { ValidationModule } from "ag-grid-community"; 
+import { CellStyleModule } from 'ag-grid-community';
 import PageLayout from "../pages/PageLayout";
 
 
 // Register required modules
-ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule]);
+ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule, CellStyleModule]);
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
@@ -16,11 +17,15 @@ import { WrapText } from "lucide-react";
 const DeviceGroups = () => {
   const [rowData, setRoData] = useState();
   const [columnDefs] = useState([
-    { field: "profileName", headerName: "Profile Name", sortable: true, filter: true },
-    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true, wrapText:true },
-    { field: "deviceType", headerName: "Device Type", sortable: true, filter: true },
-    { field: "deviceGroup", headerName: "Device Group", sortable: true, filter: true },
-    { field: "profileType", headerName: "Profile Type", sortable: true, filter: true },
+    { field: "deviceGroupName", headerName: "Device Group Name", sortable: true, filter: true,
+      cellStyle: {display: "flex",alignItems: "center"}},
+    { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true, wrapText:true,
+      cellStyle: {display: "flex",alignItems: "center"}},
+    { field: "numberOfDevices", headerName: "No of Devices", sortable: true, filter: true,
+      cellStyle: {display: "flex",alignItems: "center"} },
+    { field: "lastModified", headerName: "Last Modified", sortable: true, filter: true, 
+      cellStyle: {display: "flex",alignItems: "center"} },
+    {field: "actions", headerName: "Actions"}  
   ]);
 
   const defaultColDef = {
@@ -34,7 +39,7 @@ const DeviceGroups = () => {
 
   async function fetchData() {
     try {
-      const response = await fetch('src/dummyDatas/deviceProfile.json');  
+      const response = await fetch('src/dummyDatas/deviceGroup.json');  
       const data = await response.json();  
       setRoData(data); 
     } catch (error) {
