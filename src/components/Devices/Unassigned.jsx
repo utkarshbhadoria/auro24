@@ -3,7 +3,7 @@ import { AgGridReact } from "ag-grid-react";
 import { ModuleRegistry } from "ag-grid-community";
 import { ClientSideRowModelModule } from "ag-grid-community";
 import { ValidationModule } from "ag-grid-community"; 
-import PageLayout from "../pages/PageLayout";
+import PageLayout from "../pages/pageLayout";
 
 
 // Register required modules
