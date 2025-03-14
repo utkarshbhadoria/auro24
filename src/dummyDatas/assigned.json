@@ -1,0 +1,93 @@
+[
+    {
+      "deviceName": "iPhone 14 Pro",
+      "groups": "Engineering",
+      "profiles": "SDEIII",
+      "os": "iOS 2.5",
+      "serialNo": "HT2HL3E80F0V",
+      "battery": "56%",
+      "lastSeen": "Jul 30, 2024"
+    },
+    {
+      "deviceName": "MacBook Pro",
+      "groups": "Development",
+      "profiles": "DevOps",
+      "os": "macOS 14",
+      "serialNo": "MBP934FJ2024",
+      "battery": "78%",
+      "lastSeen": "Jul 28, 2024"
+    },
+    {
+      "deviceName": "Samsung Galaxy S23",
+      "groups": "Sales",
+      "profiles": "Sales Lead",
+      "os": "Android 13",
+      "serialNo": "SGS23L98HDK",
+      "battery": "89%",
+      "lastSeen": "Jul 25, 2024"
+    },
+    {
+      "deviceName": "iPad Air 2023",
+      "groups": "Marketing",
+      "profiles": "Creative",
+      "os": "iPadOS 17",
+      "serialNo": "IPADAIR2001X",
+      "battery": "62%",
+      "lastSeen": "Jul 29, 2024"
+    },
+    {
+      "deviceName": "Dell XPS 15",
+      "groups": "IT Support",
+      "profiles": "Admin",
+      "os": "Windows 11",
+      "serialNo": "DELLXPS5560G",
+      "battery": "74%",
+      "lastSeen": "Jul 22, 2024"
+    },
+    {
+      "deviceName": "Google Pixel 8",
+      "groups": "Product",
+      "profiles": "PM",
+      "os": "Android 14",
+      "serialNo": "PIXEL8N89HF",
+      "battery": "93%",
+      "lastSeen": "Jul 27, 2024"
+    },
+    {
+      "deviceName": "Lenovo ThinkPad X1",
+      "groups": "HR",
+      "profiles": "HR Lead",
+      "os": "Windows 10",
+      "serialNo": "LNX1THK1234",
+      "battery": "80%",
+      "lastSeen": "Jul 21, 2024"
+    },
+    {
+      "deviceName": "Samsung Galaxy Tab S8",
+      "groups": "Finance",
+      "profiles": "Accounting",
+      "os": "Android 12",
+      "serialNo": "TABSGAL8HF77",
+      "battery": "69%",
+      "lastSeen": "Jul 23, 2024"
+    },
+    {
+      "deviceName": "Microsoft Surface Pro 9",
+      "groups": "Legal",
+      "profiles": "Law Advisor",
+      "os": "Windows 11",
+      "serialNo": "SURFACE9KDP28",
+      "battery": "77%",
+      "lastSeen": "Jul 26, 2024"
+    },
+    {
+      "deviceName": "OnePlus 11",
+      "groups": "Security",
+      "profiles": "Network Admin",
+      "os": "Android 13",
+      "serialNo": "ONEPL11RT57B",
+      "battery": "88%",
+      "lastSeen": "Jul 31, 2024"
+    }
+  ]
+  

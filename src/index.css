@@ -23,22 +23,8 @@
     background: #555;
 }
 
-/* Custom Underline */
-.custom-underline {
-    position: relative;
-  }
-  .custom-underline::after {
-    content: '';
-    position: absolute;
-    width: 70%; /* Adjust the width as needed */
-    height: 2px; /* Adjust the thickness as needed */
-    background-color: #3C4A5B; /* Use the desired color */
-    left: 15%; /* Centers the underline */
-    bottom: -10px; /* Adjust the position relative to the text */
-  }
-
 /* ====================================
-✅ AG Grid Quartz Theme - Full Screen Fix
+✅ **AG Grid Quartz Theme - Adjusted Table Height**
 ======================================= */
 .ag-theme-quartz {
     font-family: "Poppins", sans-serif;
@@ -47,123 +33,103 @@
     overflow: hidden;
     width: 98%;
     margin: 0 auto;
-    height: 85vh;
+    height: 70vh; /* ✅ Reduced from 85vh to 70vh */
     padding: 0 !important;
 }
 
-/* ====================================
-✅ Remove Extra Padding in Cells
-======================================= */
-.ag-theme-quartz .ag-cell {
-    font-size: 16px !important;
-    text-align: left !important;
-    padding: 4px 4px !important;  /* ✅ Removed excess padding */
-    margin: 0 !important;
-    border: none !important;
-}
-
-/* ✅ Remove Padding from Description Cell */
-.ag-theme-quartz .ag-cell[data-col-id="description"] {
-    padding: 4px 4px !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    max-width: 100% !important;
-    border: none !important;
+/* ✅ **Enable Scrolling Inside Table (Not Page)** */
+.ag-theme-quartz .ag-body-viewport {
+    overflow-y: auto !important;
+    max-height: 50vh !important; /* ✅ Scrolls inside table */
 }
 
 /* ====================================
-✅ Fix Column Header Alignment (Flush Left)
+✅ **Force Column Headers to Left Align**
 ======================================= */
 .ag-theme-quartz .ag-header-cell-label {
     font-weight: bold !important;
     font-size: 16px !important;
-    display: flex;
-    justify-content: flex-start; /* ✅ Align header text with row data */
-    align-items: center;
-    padding: 0px 8px !important;
-    margin: 0 !important;
+    display: flex !important;
+    justify-content: flex-start !important; /* ✅ Left align header */
+    align-items: center !important;
+    padding-left: 12px !important; /* ✅ Matches row padding */
+    text-align: left !important;
+}
+
+/* ✅ **Force Left Align Row Data** */
+.ag-theme-quartz .ag-cell {
+    text-align: left !important;
+    padding-left: 12px !important;
+    font-size: 16px !important;
 }
 
 /* ====================================
-✅ Force Dashed Separator Between Rows
+✅ **Separate Rows with Dashed Lines**
 ======================================= */
 .ag-theme-quartz .ag-row {
     min-height: 65px !important;
-    border-bottom: 1.5px dashed #d1d5db !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    border-bottom: 2px dashed #b0b3b8 !important; /* ✅ Thicker dashed line */
+    padding: 10px 0 !important;
+    margin: 5px 0 !important;
 }
 
-/* ✅ Remove Dashed Line From Last Row */
+/* ✅ Remove Dashed Line from Last Row */
 .ag-theme-quartz .ag-row:last-child {
     border-bottom: none !important;
 }
 
 /* ====================================
-✅ Remove Table Border Completely
+✅ **Prevent AG Grid from Overriding Styles**
 ======================================= */
+.ag-theme-quartz .ag-header-cell {
+    text-align: left !important;
+}
+
+/* ✅ **Remove Unwanted Borders & Padding** */
 .ag-theme-quartz .ag-root-wrapper {
     border: none !important;
     padding: 0 !important;
 }
 
-/* ====================================
-✅ Prevent Blue Focus Border on Cell Click
-======================================= */
-.ag-theme-quartz .ag-cell-focus {
-    outline: none !important;
-    border: none !important;
+/* ✅ **Fix Column Width Resizing Issue** */
+.ag-theme-quartz .ag-header-cell,
+.ag-theme-quartz .ag-header-group-cell {
+    min-width: 100px !important;
 }
 
 /* ====================================
-✅ Remove Grid Border (Perfect Clean Look)
-======================================= */
-.ag-theme-quartz .ag-root,
-.ag-theme-quartz .ag-row {
-    border: none !important;
-}
-
-/* ====================================
-✅ Auto Expand Row Based on Description Length
+✅ **Ensure Row Heights are Proper**
 ======================================= */
 .ag-theme-quartz .ag-row {
     transition: all 0.2s ease-in-out;
-    min-height: 65px !important;
+    min-height: 75px !important;
 }
 
-/* ✅ Expand Row Automatically if Description Is Large */
+/* ✅ **Ensure Description Column Expands Properly** */
 .ag-theme-quartz .ag-cell[data-col-id="description"] {
     white-space: normal !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
+    line-height: 1.5 !important;
 }
 
 /* ====================================
-✅ Clean Hover Effect on Rows
+✅ **Smooth Hover Effect on Rows**
 ======================================= */
 .ag-theme-quartz .ag-row:hover {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9 !important;
     transition: all 0.2s ease-in-out;
 }
 
 /* ====================================
-✅ Remove Pagination Padding
+✅ **Remove Pagination Padding**
 ======================================= */
 .ag-theme-quartz .ag-pagination-panel {
     padding: 0 !important;
     margin: 0 !important;
 }
 
-/* ====================================
-✅ Prevent Last Row Padding
-======================================= */
-.ag-theme-quartz .ag-row:last-child {
-    border-bottom: none !important;
-}
-
-/* ====================================
-✅ Stretch Table to Full Page Width
-======================================= */
+/* ✅ **Stretch Table to Full Page Width** */
 .ag-theme-quartz {
     width: 98%;
     margin: 0 auto;
@@ -171,32 +137,23 @@
     overflow: hidden;
 }
 
-/* ====================================
-✅ Remove Footer Padding
-======================================= */
-.ag-theme-quartz .ag-pinned-bottom {
-    padding: 0 !important;
-    margin: 0 !important;
+/* ✅ **Fix Table Layout for Proper Alignment** */
+.ag-theme-quartz .ag-header-container {
+    display: flex !important;
 }
 
-/* ====================================
-✅ Minimal Padding Around Cells
-======================================= */
-.ag-theme-quartz .ag-cell {
-    padding: 5px 5px !important;
-    text-align: left !important;
+/* ✅ **Fix Last Row Padding Issue** */
+.ag-theme-quartz .ag-row:last-child {
+    border-bottom: none !important;
 }
 
-/* ====================================
-✅ Ensure No Focus Outline
-======================================= */
+/* ✅ **Ensure No Focus Outline on Click** */
 .ag-theme-quartz .ag-cell-focus {
     outline: none !important;
+    border: none !important;
 }
 
-/* ====================================
-✅ Remove Grid Line Border
-======================================= */
+/* ✅ **Ensure No Grid Border Appears** */
 .ag-theme-quartz .ag-root,
 .ag-theme-quartz .ag-row {
     border: none !important;

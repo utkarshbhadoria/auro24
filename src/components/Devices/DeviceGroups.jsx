@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { ModuleRegistry } from "ag-grid-community";
-import { ClientSideRowModelModule } from "ag-grid-community";
-import { ValidationModule } from "ag-grid-community"; 
+import { ClientSideRowModelModule , PaginationModule, ValidationModule, RowAutoHeightModule,ColumnAutoSizeModule } from "ag-grid-community";
+import { TextFilterModule } from 'ag-grid-community'; 
+import { NumberFilterModule } from 'ag-grid-community'; 
+import { DateFilterModule } from 'ag-grid-community'; 
+import { CustomFilterModule } from 'ag-grid-community'; 
 import PageLayout from "../pages/pageLayout";
+import { Trash2, Edit2 } from "lucide-react"; // ✅ Importing Icons
 
 
 // Register required modules
-ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule]);
+ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule, CustomFilterModule, DateFilterModule,NumberFilterModule,TextFilterModule, RowAutoHeightModule,ColumnAutoSizeModule]);
+
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
@@ -19,7 +24,32 @@ const DeviceGroups = () => {
     { field: "deviceGroupName", headerName: "Profile Name", sortable: true, filter: true },
     { field: "description", headerName: "Description", sortable: true, filter: true, flex: 2, autoHeight: true, wrapText:true },
     { field: "numberOfDevices", headerName: "Device Type", sortable: true, filter: true },
-    { field: "lastModified", headerName: "Device Group", sortable: true, filter: true }
+    { field: "lastModified", headerName: "Device Group", sortable: true, filter: true },
+    {
+      headerName: "Actions",
+      cellRenderer: (params) => (
+        <div className="flex gap-3">
+          {/* ✅ Edit Button */}
+          <button
+            className="text-blue-600 hover:text-blue-800"
+            onClick={() => handleEditRow(params.data)}
+            title="Edit"
+          >
+            <Edit2 size={18} />
+          </button>
+
+          {/* ✅ Delete Button */}
+          <button
+            className="text-red-600 hover:text-red-800"
+            onClick={() => handleDeleteRow(params.rowIndex)}
+            title="Delete"
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
+      ),
+      width: 120,
+    }
   ]);
 
   const defaultColDef = {

@@ -55,7 +55,7 @@ const PageLayout = ({ children, title, subtitle, description }) => {
         </div>
 
         {/* ✅ Full-Page Table Section */}
-        <div className="bg-white w-full p-4 rounded-2xl shadow-md flex-1 mx-auto overflow-y-auto">
+        <div className="bg-white w-full p-4 rounded-3xl shadow-md flex-1 mx-auto overflow-y-auto">
           {children}
         </div>
       </div>
