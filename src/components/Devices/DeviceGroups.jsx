@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { ModuleRegistry } from "ag-grid-community";
-import { ClientSideRowModelModule , PaginationModule, ValidationModule, RowAutoHeightModule,ColumnAutoSizeModule } from "ag-grid-community";
+import { ClientSideRowModelModule , PaginationModule, ValidationModule, RowAutoHeightModule,ColumnAutoSizeModule ,CellStyleModule} from "ag-grid-community";
 import { TextFilterModule } from 'ag-grid-community'; 
 import { NumberFilterModule } from 'ag-grid-community'; 
 import { DateFilterModule } from 'ag-grid-community'; 
@@ -11,7 +11,7 @@ import { Trash2, Edit2 } from "lucide-react"; // ✅ Importing Icons
 
 
 // Register required modules
-ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule, CustomFilterModule, DateFilterModule,NumberFilterModule,TextFilterModule, RowAutoHeightModule,ColumnAutoSizeModule]);
+ModuleRegistry.registerModules([ClientSideRowModelModule, ValidationModule, CustomFilterModule, DateFilterModule,NumberFilterModule,TextFilterModule, RowAutoHeightModule,ColumnAutoSizeModule,CellStyleModule]);
 
 
 import "ag-grid-community/styles/ag-grid.css";
@@ -63,7 +63,7 @@ const DeviceGroups = () => {
 
   async function fetchData() {
     try {
-      const response = await fetch('src/dummyDatas/devicegroup.json');  
+      const response = await fetch('src/dummyDatas/deviceGroup.json');  
       const data = await response.json();  
       setRoData(data); 
     } catch (error) {
