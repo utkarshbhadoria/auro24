@@ -3,67 +3,43 @@
       "deviceGroupName": "Sales Team Devices",
       "description": "Devices used by the sales team",
       "numberOfDevices": 50,
-      "lastModified": "Mar 15, 2023"
-    },
-    {
-      "deviceGroupName": "Engineering Workstations",
-      "description": "High-performance workstations used by the engineering team",
-      "numberOfDevices": 75,
-      "lastModified": "Feb 20, 2023"
-    },
-    {
-      "deviceGroupName": "Marketing Laptops",
-      "description": "Laptops assigned to the marketing team for campaigns and content creation",
-      "numberOfDevices": 30,
-      "lastModified": "Jan 10, 2023"
+      "lastModified": "2023-03-15"
     },
     {
       "deviceGroupName": "IT Department Devices",
-      "description": "Devices managed and maintained by the IT department",
-      "numberOfDevices": 120,
-      "lastModified": "Apr 5, 2023"
+      "description": "Devices for IT staff",
+      "numberOfDevices": 30,
+      "lastModified": "2023-04-10"
     },
     {
-      "deviceGroupName": "Customer Support Tablets",
-      "description": "Tablets used by customer support representatives for live assistance",
-      "numberOfDevices": 40,
-      "lastModified": "May 12, 2023"
+      "deviceGroupName": "Remote Workers",
+      "description": "Devices for remote employees",
+      "numberOfDevices": 20,
+      "lastModified": "2023-02-05"
     },
     {
-      "deviceGroupName": "Remote Work Devices",
-      "description": "Laptops and mobile devices assigned for employees working remotely",
-      "numberOfDevices": 85,
-      "lastModified": "Jun 18, 2023"
+      "deviceGroupName": "Executive Devices",
+      "description": "Devices assigned to executives",
+      "numberOfDevices": 10,
+      "lastModified": "2023-01-20"
     },
     {
-      "deviceGroupName": "Executive Office Devices",
-      "description": "Premium devices used by the executive team",
+      "deviceGroupName": "Test Devices",
+      "description": "Devices assigned to executives",
       "numberOfDevices": 15,
-      "lastModified": "Jul 22, 2023"
+      "lastModified": "2023-03-01"
     },
     {
-      "deviceGroupName": "R&D Lab Devices",
-      "description": "Specialized equipment and computers for research and development",
-      "numberOfDevices": 60,
-      "lastModified": "Aug 30, 2023"
+      "deviceGroupName": "Custom Group 1",
+      "description": "Custom grouping for specific needs",
+      "numberOfDevices": 5,
+      "lastModified": "2023-04-12"
     },
     {
-      "deviceGroupName": "Training Center Devices",
-      "description": "Devices set up for employee training and onboarding sessions",
-      "numberOfDevices": 100,
-      "lastModified": "Sep 5, 2023"
-    },
-    {
-      "deviceGroupName": "Warehouse Scanners",
-      "description": "Handheld scanners used for inventory tracking in warehouses",
-      "numberOfDevices": 200,
-      "lastModified": "Oct 15, 2023"
-    },
-    {
-      "deviceGroupName": "Point of Sale (POS) Systems",
-      "description": "POS systems installed across retail outlets",
-      "numberOfDevices": 150,
-      "lastModified": "Nov 22, 2023"
+      "deviceGroupName": "Custom Group 2",
+      "description": "Another custom grouping",
+      "numberOfDevices": 5,
+      "lastModified": "2023-03-25"
     }
   ]
   
